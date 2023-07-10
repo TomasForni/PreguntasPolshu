@@ -8,7 +8,7 @@ const svcPregunta = new PreguntaService();
 
 
 
-router.get('', verificacionLogin, async (req, res, next) => {
+router.get('', async (req, res, next) => {
     try {
         let GetAll = await svcPregunta.getAll();
         res.send(GetAll);
@@ -17,7 +17,7 @@ router.get('', verificacionLogin, async (req, res, next) => {
     }
 });
 
-router.get('/:id', verificacionLogin, async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         let GetById = await svcPregunta.getById(req.params.id);
         res.send(GetById);
@@ -26,7 +26,7 @@ router.get('/:id', verificacionLogin, async (req, res) => {
     }
 });
 
-router.post('', verificacionLogin, async (req, res) => {
+router.post('', async (req, res) => {
     try {
         console.log(req.body);
         let svc2 = new Pregunta();
@@ -46,7 +46,7 @@ router.post('', verificacionLogin, async (req, res) => {
     }
 });
 
-router.put('/:id', verificacionLogin, async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         let svc2 = new Pregunta();
         let preguntaNew = new svc2.constructor(
@@ -66,7 +66,7 @@ router.put('/:id', verificacionLogin, async (req, res) => {
     }
 });
 
-router.delete('/:id', verificacionLogin , async (req, res) => {
+router.delete('/:id',  async (req, res) => {
     try {
         let deleteById = await svcPregunta.deleteById(req.params.id);
         res.send(deleteById);

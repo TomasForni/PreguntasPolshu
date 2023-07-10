@@ -2,9 +2,9 @@ import express from "express";
 
 import Pregunta from "./src/models/Pregunta.js";
 
-import PreguntaService from "./src/services/preguntas-services";
+import PreguntaService from "./src/services/preguntas-services.js";
 
-import router from "./src/controllers/preguntaController.js";
+import router from "./src/controllers/preguntasController.js";
 import cors from "cors";
 
 const app = express();
