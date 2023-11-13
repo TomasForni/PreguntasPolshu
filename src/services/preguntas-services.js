@@ -60,14 +60,14 @@ class PreguntaService {
         try {
             let pool = await sql.connect(config);
             let result = await pool.request()
-            .input('pregId', sql.Int, pregunta.Id)
-            .input('pregPregunta', sql.VarChar, pregunta.Pregunta)
-            .input('pregRespuesta01', sql.VarChar, pregunta.Respuesta01)
-            .input('pregRespuesta02', sql.VarChar, pregunta.Respuesta02)
-            .input('pregRespuesta03', sql.VarChar, pregunta.Respuesta03)
-            .input('pregRespuesta04', sql.VarChar, pregunta.Respuesta04)
-            .input('pregRespuestaCorrecta', sql.Float, pregunta.RespuestaCorrecta)
-            .input('pregFechaCreacion', sql.DateTime, pregunta.FechaCreacion)
+            .input('pregId', sql.Int, preguntas.Id)
+            .input('pregPregunta', sql.VarChar, preguntas.Pregunta)
+            .input('pregRespuesta01', sql.VarChar, preguntas.Respuesta01)
+            .input('pregRespuesta02', sql.VarChar, preguntas.Respuesta02)
+            .input('pregRespuesta03', sql.VarChar, preguntas.Respuesta03)
+            .input('pregRespuesta04', sql.VarChar, preguntas.Respuesta04)
+            .input('pregRespuestaCorrecta', sql.Float, preguntas.RespuestaCorrecta)
+            .input('pregFechaCreacion', sql.DateTime, preguntas.FechaCreacion)
             .query('INSERT INTO Preguntas(Pregunta, Respuesta01, Respuesta02, Respuesta03, Respuesta04, RespuestaCorrecta, FechaCreacion) VALUES (@pregPregunta, @pregRespuesta01, @pregRespuesta02, @pregRespuesta03, @pregRespuesta04, @pregRespuestaCorrecta, @pregFechaCreacion)');
             rowsAffected = result.rowsAffected;
         } catch (error) {

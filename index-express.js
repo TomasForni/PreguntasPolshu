@@ -50,10 +50,10 @@ app.post("/api/preguntas", async (req, res) => {
     let svc2 = new Pregunta();
     let preguntaNew = new svc2.constructor(
       req.body.Pregunta,
-      req.body.Respuesa01,
-      req.body.Respuesa02,
-      req.body.Respuesa03,
-      req.body.Respuesa04,
+      req.body.Respuesta01,
+      req.body.Respuesta02,
+      req.body.Respuesta03,
+      req.body.Respuesta04,
       req.body.RespuestaCorrecta,
       req.body.FechaCreacion
     );
@@ -71,10 +71,10 @@ app.put("/api/preguntas/:id", async (req, res) => {
     let preguntaNew = new svc2.constructor(
       req.body.Id,
       req.body.Pregunta,
-      req.body.Respuesa01,
-      req.body.Respuesa02,
-      req.body.Respuesa03,
-      req.body.Respuesa04,
+      req.body.Respuesta01,
+      req.body.Respuesta02,
+      req.body.Respuesta03,
+      req.body.Respuesta04,
       req.body.RespuestaCorrecta,
       req.body.FechaCreacion
     );
